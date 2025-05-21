@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head> <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>HiitPro</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="https://raw.githubusercontent.com/mamantini/IMAGENES/refs/heads/main/manifest.json">
+    <meta name="theme-color" content="#0a192f"> 
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-shell">
+
+        <div id="setupScreen" class="screen active-screen">
+            <header class="setup-header">
+                <h1>Configurar Rutina</h1>
+            </header>
+            <main class="setup-content">
+                <div class="input-group">
+                    <label for="seriesInput">Series</label>
+                    <input type="number" id="seriesInput" value="3" min="1" inputmode="numeric" pattern="[0-9]*">
+                </div>
+                <div class="input-group">
+                    <label for="workInput">Entrenamiento (seg)</label>
+                    <input type="number" id="workInput" value="25" min="1" inputmode="numeric" pattern="[0-9]*">
+                </div>
+                <div class="input-group">
+                    <label for="restInput">Pausa (seg)</label>
+                    <input type="number" id="restInput" value="10" min="0" inputmode="numeric" pattern="[0-9]*">
+                </div>
+            </main>
+            <footer class="setup-footer">
+                <button id="startButton" class="button-primary-setup">Iniciar</button>
+            </footer>
+        </div>
+
+        <div id="timerScreen" class="screen">
+            <div class="background-layer">
+                <div class="bg-light-panel"></div>
+                <div class="bg-dark-panel"></div>
+            </div>
+
+            <div class="content-layer">
+                <header class="timer-main-header">
+                    <div class="workout-info">
+                        <span class="workout-label">HIIT</span>
+                    </div>
+                    <div id="mainTimerDisplay" class="main-timer-digits">00:00</div>
+                </header>
+
+                <div id="centralSeriesProgress" class="central-series-display">
+                    <!-- El contenido se llenará con JavaScript -->
+                </div>
+
+                <!-- NUEVA BARRA DE PROGRESO LINEAL SIMPLE -->
+                <div class="linear-progress-container">
+                    <div class="linear-progress-bar" id="linearIntervalProgressBar">
+                        <div class="linear-progress-bar__fill" id="linearIntervalProgressFill"></div>
+                    </div>
+                </div>
+
+                <main class="active-state-container">
+                    <div id="activeStateCard" class="state-card">
+                        <h2 id="stateCardTitle" class="state-title">PREPÁRATE</h2>
+                        <p id="stateCardTimer" class="state-time-digits">00:03</p>
+                        <div class="card-controls">
+                            <button id="pauseResumeButton" class="card-button pause-button" aria-label="Pausar">
+                                <!-- Icono se insertará con JS -->
+                            </button>
+                        </div>
+                    </div>
+                </main>
+
+                <footer class="timer-main-footer">
+                    <button id="resetButton" class="footer-button secondary" aria-label="Resetear Intervalo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 12a10 10 0 0 0 10 10c5.523 0 10-4.477 10-10S17.523 2 12 2"/></svg>
+                        <span>Resetear</span>
+                    </button>
+                    <button id="abortButton" class="footer-button danger" aria-label="Abortar Sesión">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        <span>Abortar</span>
+                    </button>
+                </footer>
+            </div>
+        </div>
+
+        <div id="completionScreen" class="screen">
+            <main class="completion-main">
+                <div class="completion-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                </div>
+                <h1>¡Rutina Finalizada!</h1>
+                <p>¡Excelente trabajo!</p>
+            </main>
+            <footer class="completion-footer">
+                <button id="restartSetupButton" class="button-primary-setup">Nueva Rutina</button>
+            </footer>
+        </div>
+    </div>
+    <!-- <script src="script.js"></script> ELIMINADO PARA CODEPEN -->
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
