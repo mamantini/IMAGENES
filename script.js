@@ -1,17 +1,23 @@
 // script.js
+console.log("script.js cargado, intentando registrar SW..."); // Para depuración
 
-// Registrar el Service Worker
 if ('serviceWorker' in navigator) { // Comprueba si el navegador soporta Service Workers
+    console.log("Service Worker API soportada."); // Para depuración
     window.addEventListener('load', () => { // Esperar a que la página cargue para no interferir
-        navigator.serviceWorker.register('sw.js') // Ruta al archivo del Service Worker (relativa al origen)
+        console.log("Evento window.load disparado, registrando SW..."); // Para depuración
+        navigator.serviceWorker.register('sw.js') // Ruta al archivo del Service Worker
             .then(registration => {
                 console.log('ServiceWorker: Registrado exitosamente con alcance:', registration.scope);
             })
             .catch(error => {
-                console.log('ServiceWorker: Fallo en el registro:', error);
+                console.error('ServiceWorker: Fallo en el registro:', error); // Usar console.error
             });
     });
+} else {
+    console.warn("Service Worker API NO soportada por este navegador."); // Para depuración
 }
+
+// El resto de tu código (document.addEventListener('DOMContentLoaded', ...)) va después de esto
 document.addEventListener('DOMContentLoaded', () => {
     // Pantallas
     const setupScreen = document.getElementById('setupScreen');
