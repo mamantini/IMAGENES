@@ -1,3 +1,17 @@
+// script.js
+
+// Registrar el Service Worker
+if ('serviceWorker' in navigator) { // Comprueba si el navegador soporta Service Workers
+    window.addEventListener('load', () => { // Esperar a que la página cargue para no interferir
+        navigator.serviceWorker.register('sw.js') // Ruta al archivo del Service Worker (relativa al origen)
+            .then(registration => {
+                console.log('ServiceWorker: Registrado exitosamente con alcance:', registration.scope);
+            })
+            .catch(error => {
+                console.log('ServiceWorker: Fallo en el registro:', error);
+            });
+    });
+}
 document.addEventListener('DOMContentLoaded', () => {
     // Pantallas
     const setupScreen = document.getElementById('setupScreen');
