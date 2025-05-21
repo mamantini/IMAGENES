@@ -2,7 +2,7 @@
   "name": "HiitPro",
   "short_name": "FocusTimer",
   "description": "Un temporizador de entrenamiento HIIT configurable y elegante.",
-  "start_url": ".",
+  "start_url": "https://cdpn.io/pen/debug/ZYYdJRo?authentication_hash=XBrGRWGwPEQM",
   "display": "standalone",
   "background_color": "#0a192f",
   "theme_color": "#0a192f",
